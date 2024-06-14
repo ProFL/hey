@@ -38,23 +38,15 @@ jobs:
                   username: ${{ vars.DOCKER_HUB_USERNAME }}
                   password: ${{ secrets.DOCKER_HUB_PAT }}
 
-            - name: Ensure lowercase repository name
-              id: repository
-              run: >-
-                echo "github_repository=$(
-                  echo ${{ github.repository }} |
-                  tr '[:upper:]' '[:lower:]'
-                )" >> "$GITHUB_OUTPUT"
-
             - name: Build and push Docker images
               uses: docker/build-push-action@v5
               with:
                   cache-from: |
-                      type=registry,ref=ghcr.io/${{ steps.repository.github_repository }}:latest
+                      type=gha
                   cache-to: |
-                      type=registry,ref=ghcr.io/${{ steps.repository.github_repository }}:latest
+                      type=gha
                   build-args: |
-                      SOURCE_REPOSITORY=github.com/${{ steps.repository.github_repository }}
+                      SOURCE_REPOSITORY=github.com/${{ github.repository }}
                   platforms: linux/amd64, linux/arm64
                   push: ${{ github.event_name != 'pull_request' }}
                   tags: ${{ steps.meta.outputs.tags }}
