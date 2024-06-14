@@ -1,6 +1,7 @@
 ![hey](http://i.imgur.com/szzD9q0.png)
 
-[![Build Status](https://travis-ci.org/rakyll/hey.svg?branch=master)](https://travis-ci.org/rakyll/hey)
+
+[![Build Status](https://github.com/ProFL/hey/actions/workflows/docker-image/badge.svg)](https://github.com/ProFL/hey/actions/workflows/docker-image)
 
 hey is a tiny program that sends some load to a web application.
 
@@ -19,6 +20,12 @@ To preserve the name for its original owner, we renamed this project to hey.
 
 macOS:
 -  [Homebrew](https://brew.sh/) users can use `brew install hey`.
+
+Or use straight from Docker with:
+
+```bash
+docker run --rm -it ProFL/hey [options...] <url>
+```
 
 ## Usage
 
