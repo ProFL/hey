@@ -1,7 +1,7 @@
 ![hey](http://i.imgur.com/szzD9q0.png)
 
 
-[![Build Status](https://github.com/ProFL/hey/actions/workflows/docker-image/badge.svg)](https://github.com/ProFL/hey/actions/workflows/docker-image)
+[![Build Status](https://github.com/ProFL/hey/actions/workflows/docker-image.yml/badge.svg)](https://github.com/ProFL/hey/actions/workflows/docker-image.yml)
 
 hey is a tiny program that sends some load to a web application.
 
