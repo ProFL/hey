@@ -24,7 +24,7 @@ macOS:
 Or use straight from Docker with:
 
 ```bash
-docker run --rm -it ProFL/hey [options...] <url>
+docker run --rm -it peedrofl/hey [options...] <url>
 ```
 
 ## Usage
